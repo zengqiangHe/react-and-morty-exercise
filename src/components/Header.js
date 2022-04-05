@@ -11,7 +11,7 @@ justify-content:center;
 
   list-style-type: none;
   gap: 1.8rem;
-  background-color: #FC5050;
+  background-color: #333;
   position:fixed;
   top:0;
   padding:30px;

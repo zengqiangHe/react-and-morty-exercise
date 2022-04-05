@@ -19,7 +19,7 @@ const CardsItems = styled.li`
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  background-color: #FFD00C;
+  background-color: #7CD1B8;
   width:70%;
   margin-top:150px;
   margin-right:20px;

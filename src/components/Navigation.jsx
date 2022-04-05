@@ -17,7 +17,7 @@ const NavListItems = styled.ul`
   justify-content: center;
   list-style-type: none;
   gap: 1.8rem;
-  background-color: #FC5050;
+  background-color: #333;
   position:fixed;
   bottom:0;
   padding:30px;
