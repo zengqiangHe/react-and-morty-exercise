@@ -1,31 +1,34 @@
 import "./App.css";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
-import Cards from "./components/Cards";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Details from "./pages/Details";
+import Home from "./pages/Home";
 
 function App() {
-  const [character, setCharacter] = useState([]);
+  const [fetchedCharacters, setFetchedCharacters] = useState([]);
 
   const loadCharacter = () => {
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
-      .then((data) => setCharacter(data.results));
+      .then((data) => setFetchedCharacters(data.results));
   };
 
   useEffect(() => {
     loadCharacter();
   }, []);
+
   return (
     <div className="App">
       <Header />
-      {character.map((character) => (
-            <Cards
-              key={character.id}
-              image={character.image}
-              name={character.name}
-            />
-          ))}
+      <Routes>
+        <Route path="/" element={<Home characters={fetchedCharacters} />} />
+        <Route
+          path="/details/:id"
+          element={<Details characters={fetchedCharacters} />}
+        />
+      </Routes>
       <Navigation />
     </div>
   );
